@@ -1,0 +1,14 @@
+.ppn-container {
+		margin-top: 10px;
+}
+.ppn-item {
+		margin-top: 10px;
+}
+
+#ppn-post-type, #ppn-tag-id, #ppn-category-id {
+		width: 375px;
+}
+
+.ppn-item-hidden {
+		display: none;
+}
