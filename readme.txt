@@ -16,7 +16,9 @@ To use, from the admin area of your site, select what content you want to includ
 
 Download the resulting PDF or save it to your media library for easy public linking and sharing.
 
-This plugin does not require any third party PDF generation services or subscriptions to create the printable PDF file, everything is done within the plugin itself.
+This plugin does not require any remote PDF generation services or subscriptions to create the printable PDF file, everything is done within the plugin itself.
+
+Credit to [TCPDF](https://tcpdf.org) for the PDF generation library and [Freepik](https://www.flaticon.com/authors/freepik) for the plugin icon.
 
 = Contributing =
 
