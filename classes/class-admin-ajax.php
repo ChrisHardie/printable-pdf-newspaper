@@ -92,7 +92,7 @@ class Ajax {
 			'order'    => 'ASC',
 			'number'   => 100,
 		);
-		if ( $_GET['q'] ) {
+		if ( ! empty( $_GET['q'] ) ) {
 			$term_args['name__like'] = sanitize_text_field( $_GET['q'] );
 		}
 		$term_query = new \WP_Term_Query( $term_args );
