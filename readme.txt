@@ -51,6 +51,11 @@ Some people still encounter things and ideas through engagement with objects in 
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Maintenance: Tested against WordPress 5.4
+* Maintenance: Updated TCPDF library to latest release
+
 = 1.0.1 =
 
 * Tested against WordPress 5.3
