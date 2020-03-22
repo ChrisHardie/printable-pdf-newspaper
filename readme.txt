@@ -3,7 +3,7 @@ Contributors: chrishardie
 Tags: print,pdf,newspaper,newsletter,journalism,news
 Stable tag: trunk
 Requires at least: 5.2.2
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.6
 
 Generates a printable PDF newspaper from post content.
@@ -50,6 +50,11 @@ Some people still encounter things and ideas through engagement with objects in 
 2. Admin PDF configuration screen.
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Maintenance: Tested against WordPress 5.4
+* Maintenance: Updated TCPDF library to latest release
 
 = 1.0.1 =
 
