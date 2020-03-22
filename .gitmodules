@@ -1,4 +1,0 @@
-[submodule "lib/tcpdf"]
-	path = lib/tcpdf
-	url = git@github.com:tecnickcom/TCPDF.git
-	ignore = dirty
