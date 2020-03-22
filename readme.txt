@@ -3,7 +3,7 @@ Contributors: chrishardie
 Tags: print,pdf,newspaper,newsletter,journalism,news
 Stable tag: trunk
 Requires at least: 5.2.2
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.6
 
 Generates a printable PDF newspaper from post content.
