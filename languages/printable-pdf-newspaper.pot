@@ -1,0 +1,127 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Printable PDF Newspaper\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-05 02:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.2; wp-5.4"
+
+#: views/admin/config-form.php:93
+msgid "Author"
+msgstr ""
+
+#: views/admin/config-form.php:57
+msgid "blank for full content"
+msgstr ""
+
+#: views/admin/config-form.php:56
+msgid "characters"
+msgstr ""
+
+#: views/admin/config-form.php:77
+msgid "Choose Image"
+msgstr ""
+
+#. Author of the plugin
+msgid "Chris Hardie"
+msgstr ""
+
+#: views/admin/config-form.php:5
+msgid ""
+"Configure how you want your printable PDF newspaper to look, and what "
+"content it should include."
+msgstr ""
+
+#: views/admin/pdf/pdf-template.php:76
+msgid "Continue&nbsp;Reading"
+msgstr ""
+
+#: views/admin/config-form.php:99
+msgid "Date"
+msgstr ""
+
+#: views/admin/config-form.php:125
+msgid "Download PDF"
+msgstr ""
+
+#: views/admin/config-form.php:47
+msgid "Enter the number of posts to include"
+msgstr ""
+
+#: views/admin/config-form.php:105
+msgid "Featured image"
+msgstr ""
+
+#. Description of the plugin
+msgid "Generate a Printable PDF Newspaper from Posts"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://chrishardie.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/ChrisHardie/printable-pdf-newspaper"
+msgstr ""
+
+#: views/admin/config-form.php:67
+msgid "Number of columns to use"
+msgstr ""
+
+#: views/admin/config-form.php:38
+msgid "Only include content from a certain category"
+msgstr ""
+
+#: views/admin/config-form.php:28
+msgid "Only include content with a certain tag"
+msgstr ""
+
+#: views/admin/config-form.php:111
+msgid "Permalink QR Code"
+msgstr ""
+
+#: classes/class-admin-init.php:40
+msgid "Printable PDF"
+msgstr ""
+
+#. Name of the plugin
+#: classes/class-admin-init.php:39 views/admin/config-form.php:3
+msgid "Printable PDF Newspaper"
+msgstr ""
+
+#: views/admin/config-form.php:121
+msgid "Save PDF to Media Library"
+msgstr ""
+
+#: views/admin/config-form.php:74
+msgid "Select a masthead image"
+msgstr ""
+
+#: views/admin/config-form.php:87
+msgid "Title"
+msgstr ""
+
+#: views/admin/config-form.php:53
+msgid "Truncate post content at"
+msgstr ""
+
+#: views/admin/config-form.php:61
+msgid "Use excerpts instead of full post content"
+msgstr ""
+
+#: views/admin/config-form.php:11
+msgid "Which content type do you want to print"
+msgstr ""
+
+#: views/admin/config-form.php:83
+msgid "Which items should be included"
+msgstr ""
