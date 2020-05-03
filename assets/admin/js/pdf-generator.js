@@ -4,8 +4,10 @@ jQuery(document).ready(function ($) {
     tagId = $('#ppn-tag-id');
     categoryId = $('#ppn-category-id');
 
+    const { __, _x, _n, _nx } = wp.i18n;
+
     type.select2({
-        placeholder: 'Select Post Type'
+        placeholder: __( 'Select Post Type' )
     });
 
 
@@ -15,7 +17,7 @@ jQuery(document).ready(function ($) {
     });
 
   tagId.select2({
-        placeholder: 'Choose Tag',
+        placeholder: __( 'Choose Tag' ),
         allowClear: true,
         ajax: {
             url: _ajax.url,
@@ -45,7 +47,7 @@ jQuery(document).ready(function ($) {
     });
 
     categoryId.select2({
-        placeholder: 'Choose Category',
+        placeholder: __( 'Choose Category' ),
         allowClear: true,
         ajax: {
             url: _ajax.url,
@@ -110,9 +112,9 @@ jQuery(document).ready(function ($) {
       }
       // Extend the wp.media object
       mediaUploader = wp.media.frames.file_frame = wp.media({
-        title: 'Choose Image',
+        title: __( 'Choose Image' ),
         button: {
-          text: 'Choose Image'
+          text: __( 'Choose Image' )
         },
         multiple: false,
         library: {
