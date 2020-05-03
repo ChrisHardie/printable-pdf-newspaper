@@ -63,12 +63,14 @@ class Admin {
 				array(
 					'jquery',
 					'select2-js',
+					'wp-i18n',
 				),
 				time(),
 				true
 			);
 			wp_enqueue_media();
 			wp_localize_script( 'pdf-generator-js', '_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
+			wp_set_script_translations( 'pdf-generator-js', 'printable-pdf-newspaper' );
 			wp_enqueue_style( 'select2-css', plugin_dir_url( __DIR__ ) . 'lib/select2/css/select2.min.css', array(), time() );
 			wp_enqueue_style( 'pdf-generator-css', plugin_dir_url( __DIR__ ) . 'assets/admin/css/pdf-generator.css', array(), time() );
 		}
