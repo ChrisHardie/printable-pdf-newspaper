@@ -47,10 +47,10 @@ class PdfHandler {
 			$url = get_attached_file( $image_id );
 			if ( in_array(
 				mime_content_type( $url ),
-				[
+				array(
 					'image/jpeg',
 					'image/png',
-				],
+				),
 				true
 			)
 			) {
@@ -124,7 +124,7 @@ class PdfHandler {
 
 		// Set up some footer properties
 		$pdf->setFooterMargin( 25 );
-		$pdf->setFooterFont( [ 'roboto', 'regular', 10 ] );
+		$pdf->setFooterFont( array( 'roboto', 'regular', 10 ) );
 
 		// Margins defined in units defined above
 		// 15 for top margin on pages 2+
