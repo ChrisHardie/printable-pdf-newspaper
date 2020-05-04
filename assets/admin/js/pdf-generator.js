@@ -7,9 +7,8 @@ jQuery(document).ready(function ($) {
     const { __, _x, _n, _nx } = wp.i18n;
 
     type.select2({
-        placeholder: __( 'Select Post Type' )
+        placeholder: __( 'Select Post Type', 'printable-pdf-newspaper' )
     });
-
 
     type.on('change', function () {
       $('#ppn-tag-id').val(null).trigger('change');
@@ -17,7 +16,7 @@ jQuery(document).ready(function ($) {
     });
 
   tagId.select2({
-        placeholder: __( 'Choose Tag' ),
+        placeholder: __( 'Choose Tag', 'printable-pdf-newspaper' ),
         allowClear: true,
         ajax: {
             url: _ajax.url,
@@ -47,7 +46,7 @@ jQuery(document).ready(function ($) {
     });
 
     categoryId.select2({
-        placeholder: __( 'Choose Category' ),
+        placeholder: __( 'Choose Category', 'printable-pdf-newspaper' ),
         allowClear: true,
         ajax: {
             url: _ajax.url,
@@ -112,9 +111,9 @@ jQuery(document).ready(function ($) {
       }
       // Extend the wp.media object
       mediaUploader = wp.media.frames.file_frame = wp.media({
-        title: __( 'Choose Image' ),
+        title: __( 'Choose Image', 'printable-pdf-newspaper' ),
         button: {
-          text: __( 'Choose Image' )
+          text: __( 'Choose Image', 'printable-pdf-newspaper' )
         },
         multiple: false,
         library: {
