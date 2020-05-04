@@ -179,7 +179,18 @@ class PdfHandler {
 	 */
 	private function render_template( $posts_to_include = null ) {
 
+		$css_to_include = $this->configure['custom_css'];
+
 		ob_start();
+		echo '<style>';
+		include plugin_dir_path( __DIR__ ) . 'assets/admin/css/pdf-template-styles.css';
+
+		if ( $css_to_include ) {
+			echo esc_html( $css_to_include );
+		}
+
+		echo '</style>';
+
 		include plugin_dir_path( __DIR__ ) . 'views/admin/pdf/pdf-template.php';
 		$content = ob_get_contents();
 		ob_end_clean();

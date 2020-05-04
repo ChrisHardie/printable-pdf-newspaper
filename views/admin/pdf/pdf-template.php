@@ -12,56 +12,6 @@ use PrintablePdfNewspaper\Admin\NewspaperPdf;
 
 defined( 'WPINC' ) || die;
 ?>
-
-<style>
-	.ppn-article-title {
-		font-family: 'Lora-Bold', serif;
-		font-size: 16pt;
-		text-align: left;
-	}
-
-	.ppn-article-wrapper p {
-		font-size: 10pt;
-		font-family: 'Roboto', sans-serif;
-	}
-
-	.ppn-author {
-		color: rgb(102, 102, 102);
-		font-family: 'Roboto', sans-serif;
-	}
-
-	.ppn-author strong {
-		font-family: 'Roboto-Bold', sans-serif;
-	}
-
-	.ppn-date {
-		color: #666;
-		line-height: 100%;
-	}
-
-	.ppn-content, .ppn-excerpt {
-		color: rgb(102, 102, 102);
-		font-size: 10pt;
-		font-family: 'Roboto', sans-serif;
-		text-indent: 20px;
-	}
-
-	.ppn-permalink-text {
-		font-weight: bold;
-		white-space: nowrap;
-		text-indent: 20px;
-	}
-
-	.ppn-permalink-qr-code-image {
-		text-align: center;
-	}
-
-	.ppn-article-bottom-border {
-		border-top: 1px dashed #d7d7d7;
-	}
-
-</style>
-
 <?php foreach ( $posts_to_include as $item ) : ?>
 	<div class="ppn-article-wrapper">
 		<?php if ( $item['image'] ) : ?>
