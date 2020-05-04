@@ -29,15 +29,7 @@ if ( ! class_exists( 'PrintablePdfNewspaper', false ) ) {
 			if ( is_admin() ) {
 				$this->load_dependencies();
 				new PrintablePdfNewspaper\Admin();
-				add_action( 'plugins_loaded', array( $this, 'ppn_load_text_domain' ) );
 			}
-		}
-
-		/**
-		 * Load plugin translations
-		 */
-		public function ppn_load_text_domain() {
-			load_plugin_textdomain( 'printable-pdf-newspaper', false, 'printable-pdf-newspaper/languages/' );
 		}
 
 		/**

@@ -4,10 +4,12 @@ jQuery(document).ready(function ($) {
     tagId = $('#ppn-tag-id');
     categoryId = $('#ppn-category-id');
 
-    type.select2({
-        placeholder: 'Select Post Type'
-    });
+    const { __, _x, _n, _nx } = wp.i18n;
 
+    type.select2({
+        language: _ppn_vars.current_language,
+        placeholder: __( 'Choose Post Type', 'printable-pdf-newspaper' )
+    });
 
     type.on('change', function () {
       $('#ppn-tag-id').val(null).trigger('change');
@@ -15,10 +17,11 @@ jQuery(document).ready(function ($) {
     });
 
   tagId.select2({
-        placeholder: 'Choose Tag',
+        language: _ppn_vars.current_language,
+        placeholder: __( 'Choose Tag', 'printable-pdf-newspaper' ),
         allowClear: true,
         ajax: {
-            url: _ajax.url,
+            url: _ppn_vars.ajax_url,
             method: 'GET',
             data: function (params) {
                 return {
@@ -45,10 +48,11 @@ jQuery(document).ready(function ($) {
     });
 
     categoryId.select2({
-        placeholder: 'Choose Category',
+        language: _ppn_vars.current_language,
+        placeholder: __( 'Choose Category', 'printable-pdf-newspaper' ),
         allowClear: true,
         ajax: {
-            url: _ajax.url,
+            url: _ppn_vars.ajax_url,
             method: 'GET',
             data: function (params) {
                 return {
@@ -79,7 +83,7 @@ jQuery(document).ready(function ($) {
         form = new FormData($('#ppn-pdf-form')[0]);
         form.append('action', 'ppn-save-pdf');
         $.ajax({
-            url: _ajax.url,
+            url: _ppn_vars.ajax_url,
             data: form,
             processData: false,
             contentType: false,
@@ -110,9 +114,9 @@ jQuery(document).ready(function ($) {
       }
       // Extend the wp.media object
       mediaUploader = wp.media.frames.file_frame = wp.media({
-        title: 'Choose Image',
+        title: __( 'Choose Image', 'printable-pdf-newspaper' ),
         button: {
-          text: 'Choose Image'
+          text: __( 'Choose Image', 'printable-pdf-newspaper' )
         },
         multiple: false,
         library: {

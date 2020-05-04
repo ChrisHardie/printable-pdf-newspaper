@@ -56,21 +56,39 @@ class Admin {
 	 */
 	public function ppn_enqueue_assets() {
 		if ( get_current_screen()->id === 'toplevel_page_printable-pdf-newspaper' ) {
-			wp_enqueue_script( 'select2-js', plugin_dir_url( __DIR__ ) . 'lib/select2/js/select2.min.js', true, '4.0.13', [ 'jquery' ] );
+
+			// Guess at the current language, for help in localization of libraries/scripts
+			$user_locale      = get_user_locale();
+			$current_language = substr( $user_locale, 0, 2 );
+
+			wp_enqueue_script( 'select2-js', plugin_dir_url( __DIR__ ) . 'lib/select2/js/select2.min.js', array( 'jquery' ), '4.0.13', false );
+			if ( 'en' !== $current_language ) {
+				$select2_language_path = plugin_dir_url( __DIR__ ) . 'lib/select2/js/i18n/' . esc_attr( $current_language ) . '.js';
+				wp_enqueue_script( 'select2-language-js', $select2_language_path, array( 'select2-js' ), '4.0.13', false );
+			}
+
 			wp_enqueue_script(
 				'pdf-generator-js',
 				plugin_dir_url( __DIR__ ) . 'assets/admin/js/pdf-generator.js',
-				true,
-				time(),
-				[
+				array(
 					'jquery',
 					'select2-js',
-				]
+					'wp-i18n',
+				),
+				time(),
+				false
 			);
+
+			$localization_vars = array(
+				'ajax_url'         => admin_url( 'admin-ajax.php' ),
+				'current_language' => $current_language,
+			);
+			wp_localize_script( 'pdf-generator-js', '_ppn_vars', $localization_vars );
+			wp_set_script_translations( 'pdf-generator-js', 'printable-pdf-newspaper' );
+
 			wp_enqueue_media();
-			wp_localize_script( 'pdf-generator-js', '_ajax', [ 'url' => admin_url( 'admin-ajax.php' ) ] );
-			wp_enqueue_style( 'select2-css', plugin_dir_url( __DIR__ ) . 'lib/select2/css/select2.min.css', [], time() );
-			wp_enqueue_style( 'pdf-generator-css', plugin_dir_url( __DIR__ ) . 'assets/admin/css/pdf-generator.css', [], time() );
+			wp_enqueue_style( 'select2-css', plugin_dir_url( __DIR__ ) . 'lib/select2/css/select2.min.css', array(), time() );
+			wp_enqueue_style( 'pdf-generator-css', plugin_dir_url( __DIR__ ) . 'assets/admin/css/pdf-generator.css', array(), time() );
 		}
 	}
 }
