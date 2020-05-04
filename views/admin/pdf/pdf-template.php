@@ -71,7 +71,7 @@ defined( 'WPINC' ) || die;
 		<?php if ( ! empty( $item['author'] ) || ! empty( $item['date'] ) ) : ?>
 			<p class="meta ppn-meta">
 				<?php if ( ! empty( $item['author'] ) ) : ?>
-					<span class="author ppn-author"><?php _e( 'By', 'printable-pdf-newspaper' ); ?> <strong><?php echo esc_html( $item['author'] ); ?></strong></span><br />
+					<span class="author ppn-author"><?php esc_attr_e( 'By', 'printable-pdf-newspaper' ); ?> <strong><?php echo esc_html( $item['author'] ); ?></strong></span><br />
 				<?php endif; ?>
 				<?php if ( ! empty( $item['date'] ) ) : ?>
 					<span class="date ppn-date"><?php echo esc_html( $item['date'] ); ?></span>
