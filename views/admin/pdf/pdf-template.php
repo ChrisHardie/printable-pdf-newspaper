@@ -46,8 +46,10 @@ defined( 'WPINC' ) || die;
 		text-indent: 20px;
 	}
 
-	.permalink-text {
+	.ppn-permalink-text {
 		font-weight: bold;
+		white-space: nowrap;
+		text-indent: 20px;
 	}
 
 	.permalink-qr-code-image {
@@ -79,7 +81,7 @@ defined( 'WPINC' ) || die;
 		<div class="<?php echo $item['has_excerpt'] ? 'excerpt ppn-excerpt' : 'content ppn-content'; ?>">
 			<?php echo wp_kses_post( $item['content'] ); ?>
 			<?php if ( $item['permalink'] ) : ?>
-				<br /><span class="permalink-text">&nbsp;&nbsp;&nbsp;<?php esc_attr_e( 'Continue&nbsp;Reading', 'printable-pdf-newspaper' ); ?>:</span><br/>
+				<br /><span class="ppn-permalink-text"><?php esc_attr_e( 'Continue Reading', 'printable-pdf-newspaper' ); ?>:</span><br/>
 				<img src="https://chart.googleapis.com/chart?chs=50x50&chld=M|1&cht=qr&chl=<?php echo esc_url( $item['permalink'] ); ?>"
 					 class="permalink-qr-code-image" width="50" height="50" />
 			<?php endif; ?>
