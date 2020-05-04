@@ -20,7 +20,7 @@ defined( 'WPINC' ) || die;
 		text-align: left;
 	}
 
-	p {
+	.ppn-article-wrapper p {
 		font-size: 10pt;
 		font-family: 'Roboto', sans-serif;
 	}
@@ -52,7 +52,7 @@ defined( 'WPINC' ) || die;
 		text-indent: 20px;
 	}
 
-	.permalink-qr-code-image {
+	.ppn-permalink-qr-code-image {
 		text-align: center;
 	}
 
@@ -83,7 +83,7 @@ defined( 'WPINC' ) || die;
 			<?php if ( $item['permalink'] ) : ?>
 				<br /><span class="ppn-permalink-text"><?php esc_attr_e( 'Continue Reading', 'printable-pdf-newspaper' ); ?>:</span><br/>
 				<img src="https://chart.googleapis.com/chart?chs=50x50&chld=M|1&cht=qr&chl=<?php echo esc_url( $item['permalink'] ); ?>"
-					 class="permalink-qr-code-image" width="50" height="50" />
+					 class="ppn-permalink-qr-code-image" width="50" height="50" />
 			<?php endif; ?>
 		</div>
 		<p class="ppn-article-bottom-border"></p>
