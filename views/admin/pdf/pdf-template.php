@@ -39,10 +39,11 @@ defined( 'WPINC' ) || die;
 		line-height: 100%;
 	}
 
-	.content, .excerpt {
+	.ppn-content, .ppn-excerpt {
 		color: rgb(102, 102, 102);
 		font-size: 10pt;
 		font-family: 'Roboto', sans-serif;
+		text-indent: 20px;
 	}
 
 	.permalink-text {
@@ -75,7 +76,7 @@ defined( 'WPINC' ) || die;
 				<?php endif; ?>
 			</p>
 		<?php endif; ?>
-		<div class="<?php echo $item['has_excerpt'] ? 'excerpt' : 'content'; ?>">
+		<div class="<?php echo $item['has_excerpt'] ? 'excerpt ppn-excerpt' : 'content ppn-content'; ?>">
 			<?php echo wp_kses_post( $item['content'] ); ?>
 			<?php if ( $item['permalink'] ) : ?>
 				<br /><span class="permalink-text">&nbsp;&nbsp;&nbsp;<?php esc_attr_e( 'Continue&nbsp;Reading', 'printable-pdf-newspaper' ); ?>:</span><br/>

@@ -112,8 +112,9 @@ class PostHandler {
 			$text = $this->truncate( $text, $length );
 		}
 
-		$text = str_replace( "\n\n", "\n<br />&nbsp;&nbsp;&nbsp;", $text );
-		$text = '&nbsp;&nbsp;&nbsp;' . $text;
+		// Replace two line breaks with a single line break (for source readability) and an HTML line break.
+		// TODO: one can end up in a situation of having multiple <br /> tags next to each other.
+		$text = (string) str_replace( "\n\n", "\n<br />", $text );
 
 		return $text;
 	}
