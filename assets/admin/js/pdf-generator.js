@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
     const { __, _x, _n, _nx } = wp.i18n;
 
     type.select2({
-        placeholder: __( 'Select Post Type', 'printable-pdf-newspaper' )
+        placeholder: __( 'Choose Post Type', 'printable-pdf-newspaper' )
     });
 
     type.on('change', function () {
