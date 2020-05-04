@@ -26,10 +26,10 @@ if ( ! class_exists( 'PrintablePdfNewspaper', false ) ) {
 		 * Load Dependencies, instantiate the Admin class, set the text domain
 		 */
 		public function __construct() {
+			$this->setup_actions();
 			if ( is_admin() ) {
 				$this->load_dependencies();
 				new PrintablePdfNewspaper\Admin();
-				add_action( 'plugins_loaded', array( $this, 'ppn_load_text_domain' ) );
 			}
 		}
 
@@ -37,7 +37,7 @@ if ( ! class_exists( 'PrintablePdfNewspaper', false ) ) {
 		 * Load plugin translations
 		 */
 		public function ppn_load_text_domain() {
-			load_plugin_textdomain( 'printable-pdf-newspaper', false, 'printable-pdf-newspaper/languages/' );
+//			load_plugin_textdomain( 'printable-pdf-newspaper', false, basename( __DIR__ ) . '/languages' );
 		}
 
 		/**
@@ -52,6 +52,10 @@ if ( ! class_exists( 'PrintablePdfNewspaper', false ) ) {
 				require_once plugin_dir_path( __FILE__ ) . 'classes/class-admin-post-handler.php';
 				require_once plugin_dir_path( __FILE__ ) . 'classes/class-admin-newspaper-tcpdf.php';
 			}
+		}
+
+		private function setup_actions() {
+			add_action( 'init', array( $this, 'ppn_load_text_domain' ) );
 		}
 	}
 }
