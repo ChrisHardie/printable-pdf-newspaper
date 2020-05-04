@@ -147,7 +147,7 @@ class NewspaperPdf extends \TCPDF {
 			$pagenumtxt = $w_page . $this->getPageNumGroupAlias() . '/' . $this->getPageGroupAlias();
 		}
 
-		$html = $this->getAliasRightShift() . 'Page ' . $pagenumtxt;
+		$html = $this->getAliasRightShift() . __( 'Page' ) . ' ' . $pagenumtxt;
 
 		if ( $this->getRTL() ) {
          $this->SetX( $this->original_rMargin ); // phpcs:ignore -- Parent code style

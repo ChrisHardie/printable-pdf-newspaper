@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-05-04T18:24:03+00:00\n"
+"POT-Creation-Date: 2020-05-04T19:38:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-192d356\n"
 "X-Domain: printable-pdf-newspaper\n"
@@ -85,8 +85,8 @@ msgid "Select a masthead image"
 msgstr ""
 
 #: views/admin/config-form.php:77
-#: assets/admin/js/pdf-generator.js:114
-#: assets/admin/js/pdf-generator.js:116
+#: assets/admin/js/pdf-generator.js:117
+#: assets/admin/js/pdf-generator.js:119
 msgid "Choose Image"
 msgstr ""
 
@@ -122,18 +122,22 @@ msgstr ""
 msgid "Download PDF"
 msgstr ""
 
+#: views/admin/pdf/pdf-template.php:66
+msgid "By"
+msgstr ""
+
 #: views/admin/pdf/pdf-template.php:76
 msgid "Continue&nbsp;Reading"
 msgstr ""
 
-#: assets/admin/js/pdf-generator.js:10
+#: assets/admin/js/pdf-generator.js:11
 msgid "Choose Post Type"
 msgstr ""
 
-#: assets/admin/js/pdf-generator.js:19
+#: assets/admin/js/pdf-generator.js:21
 msgid "Choose Tag"
 msgstr ""
 
-#: assets/admin/js/pdf-generator.js:49
+#: assets/admin/js/pdf-generator.js:52
 msgid "Choose Category"
 msgstr ""
