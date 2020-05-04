@@ -7,6 +7,7 @@ jQuery(document).ready(function ($) {
     const { __, _x, _n, _nx } = wp.i18n;
 
     type.select2({
+        language: _ppn_vars.current_language,
         placeholder: __( 'Choose Post Type', 'printable-pdf-newspaper' )
     });
 
@@ -16,10 +17,11 @@ jQuery(document).ready(function ($) {
     });
 
   tagId.select2({
+        language: _ppn_vars.current_language,
         placeholder: __( 'Choose Tag', 'printable-pdf-newspaper' ),
         allowClear: true,
         ajax: {
-            url: _ajax.url,
+            url: _ppn_vars.ajax_url,
             method: 'GET',
             data: function (params) {
                 return {
@@ -46,10 +48,11 @@ jQuery(document).ready(function ($) {
     });
 
     categoryId.select2({
+        language: _ppn_vars.current_language,
         placeholder: __( 'Choose Category', 'printable-pdf-newspaper' ),
         allowClear: true,
         ajax: {
-            url: _ajax.url,
+            url: _ppn_vars.ajax_url,
             method: 'GET',
             data: function (params) {
                 return {
@@ -80,7 +83,7 @@ jQuery(document).ready(function ($) {
         form = new FormData($('#ppn-pdf-form')[0]);
         form.append('action', 'ppn-save-pdf');
         $.ajax({
-            url: _ajax.url,
+            url: _ppn_vars.ajax_url,
             data: form,
             processData: false,
             contentType: false,

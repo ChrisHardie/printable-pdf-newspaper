@@ -56,7 +56,16 @@ class Admin {
 	 */
 	public function ppn_enqueue_assets() {
 		if ( get_current_screen()->id === 'toplevel_page_printable-pdf-newspaper' ) {
+
+			// Guess at the current language, for help in localization of libraries/scripts
+			$user_locale      = get_user_locale();
+			$current_language = substr( $user_locale, 0, 2 );
+
 			wp_enqueue_script( 'select2-js', plugin_dir_url( __DIR__ ) . 'lib/select2/js/select2.min.js', array( 'jquery' ), '4.0.13', false );
+			if ( 'en' !== $current_language ) {
+				$select2_language_path = plugin_dir_url( __DIR__ ) . 'lib/select2/js/i18n/' . esc_attr( $current_language ) . '.js';
+				wp_enqueue_script( 'select2-language-js', $select2_language_path, array( 'select2-js' ), '4.0.13', false );
+			}
 
 			wp_enqueue_script(
 				'pdf-generator-js',
@@ -69,7 +78,12 @@ class Admin {
 				time(),
 				false
 			);
-			wp_localize_script( 'pdf-generator-js', '_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
+
+			$localization_vars = array(
+				'ajax_url'         => admin_url( 'admin-ajax.php' ),
+				'current_language' => $current_language,
+			);
+			wp_localize_script( 'pdf-generator-js', '_ppn_vars', $localization_vars );
 			wp_set_script_translations( 'pdf-generator-js', 'printable-pdf-newspaper' );
 
 			wp_enqueue_media();
