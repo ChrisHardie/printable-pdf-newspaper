@@ -80,7 +80,8 @@
 			</div>
 			<div class="ppn-item ppn-item-after-selection">
 				<label for="ppn-custom-css">
-					<b><?php esc_attr_e( 'Custom CSS', 'printable-pdf-newspaper' ); ?>:</b>
+					<b><?php esc_attr_e( 'Custom CSS', 'printable-pdf-newspaper' ); ?>:</b><br />
+					<a href="https://wordpress.org/plugins/printable-pdf-newspaper/#faq-header" target="_blank"><?php esc_attr_e( 'Help' ); ?></a>
 				</label>
 				<textarea id="ppn-custom-css" name="configure[custom_css]" rows="10" cols="55"></textarea>
 			</div>

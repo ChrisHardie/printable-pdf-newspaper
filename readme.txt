@@ -38,6 +38,8 @@ You can customize the PDF newspaper layout and styles using limited CSS definiti
 1. Enter your custom style definitions in the "Custom CSS" input field when generating the PDF.
 1. In your theme, filter the output of `ppn_pdf_template_css_file_path` to specify the full filesystem path to a file containing CSS styles.
 
+When specifying custom styles, do not enclose them in a `<style>` tag or any other HTML. Invalid CSS may break the PDF generation process.
+
 Here are the CSS classes you may wish to adjust:
 
 * *ppn-article-title*: Headlines / post titles
