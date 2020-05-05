@@ -52,6 +52,7 @@ Here are the CSS classes you may wish to adjust:
 You can view the default style definitions in the plugin file `assets/admin/css/pdf-template-styles.css` or [in Trac](https://plugins.trac.wordpress.org/browser/printable-pdf-newspaper/trunk/assets/admin/css/pdf-template-styles.css).
 
 Note that TCPDF only supports a limited subset of the full CSS specification. Also note that any fonts referenced must be available in the TCPDF library used to generate the PDF. You can [view the TCPDF core font list](https://tcpdf.org/docs/fonts/).
+There's also an experimental filter, `ppn_font_file_paths`, that allows you to add to or change the array of TTF font file paths being loaded.
 
 Currently the header image size/position and subheading styles are not easily customizable, but will be in the future.
 

@@ -109,10 +109,16 @@ class PdfHandler {
 		}
 
 		// Include some fonts to be used
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/robotoregular.ttf' );
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoBold.ttf' );
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoRegularItalic.ttf' );
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/lorabold.ttf' );
+		$fonts_to_include = array(
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/robotoregular.ttf',
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoBold.ttf',
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoRegularItalic.ttf',
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/lorabold.ttf',
+		);
+
+		foreach ( apply_filters( 'ppn_font_file_paths', $fonts_to_include ) as $font_path ) {
+			TCPDF_FONTS::addTTFfont( $font_path );
+		}
 
 		// Adjust font settings for each.
 		// $family, $style, $size
