@@ -78,20 +78,20 @@ class NewspaperPdf extends \TCPDF {
 				30, // Ordinate of first point.
 				212, // Abscissa of second point.
 				30, // Ordinate of second point.
-				[ // Line style. Array like for SetLineStyle()
+				array( // Line style. Array like for SetLineStyle()
 					'width' => 0.3,
 					'cap'   => 'square', // Type of cap to put on the line. Possible values are butt, round, square. The difference between "square" and "butt" is that "square" projects a flat end past the end of the line.
 					'join'  => 'miter', // Type of join. Possible values are: miter, round, bevel
 					'dash'  => '0', // dash (mixed): Dash pattern. Is 0 (without dash) or string with series of length values, which are the lengths of the on and off dashes. For example: "2" represents 2 on, 2 off, 2 on, 2 off, ...; "2,1" is 2 on, 1 off, 2 on, 1 off, ...
-					'color' => [ 102, 102, 102 ], // Draw color. Format: array(GREY) or array(R,G,B) or array(C,M,Y,K) or array(C,M,Y,K,SpotColorName)
-				]
+					'color' => array( 102, 102, 102 ), // Draw color. Format: array(GREY) or array(R,G,B) or array(C,M,Y,K) or array(C,M,Y,K,SpotColorName)
+				)
 			);
 
 			// Provide a sub-masthead with the date, site description and website address
 			$mastsubhead_text  = '';
 			$mastsubhead_text .= current_time( 'l, F j, Y' );
 			$mastsubhead_text .= " \u{2022} " . get_bloginfo( 'description' );
-			$mastsubhead_text .= " \u{2022} " . str_replace( [ 'http://', 'https://' ], '', get_bloginfo( 'url' ) );
+			$mastsubhead_text .= " \u{2022} " . str_replace( array( 'http://', 'https://' ), '', get_bloginfo( 'url' ) );
 			$mastsubhead_text  = strtoupper( $mastsubhead_text );
 
 			$this->SetY( 33 );
@@ -117,13 +117,13 @@ class NewspaperPdf extends \TCPDF {
 				36, // Ordinate of first point.
 				212, // Abscissa of second point.
 				37, // Ordinate of second point.
-				[ // Line style. Array like for SetLineStyle()
+				array( // Line style. Array like for SetLineStyle()
 					'width' => 0.3,
 					'cap'   => 'square', // Type of cap to put on the line. Possible values are butt, round, square. The difference between "square" and "butt" is that "square" projects a flat end past the end of the line.
 					'join'  => 'miter', // Type of join. Possible values are: miter, round, bevel
 					'dash'  => '0', // dash (mixed): Dash pattern. Is 0 (without dash) or string with series of length values, which are the lengths of the on and off dashes. For example: "2" represents 2 on, 2 off, 2 on, 2 off, ...; "2,1" is 2 on, 1 off, 2 on, 1 off, ...
-					'color' => [ 102, 102, 102 ], // Draw color. Format: array(GREY) or array(R,G,B) or array(C,M,Y,K) or array(C,M,Y,K,SpotColorName)
-				]
+					'color' => array( 102, 102, 102 ), // Draw color. Format: array(GREY) or array(R,G,B) or array(C,M,Y,K) or array(C,M,Y,K,SpotColorName)
+				)
 			);
 
 
@@ -160,13 +160,13 @@ class NewspaperPdf extends \TCPDF {
 			$this->getPageHeight() - PDF_MARGIN_BOTTOM / 2,
 			$this->getPageWidth() - absint( $this->GetStringWidth( $pagenumtxt ) ) - PDF_MARGIN_RIGHT,
 			$this->getPageHeight() - PDF_MARGIN_BOTTOM / 2,
-			[
+			array(
 				'width' => 0.4,
 				'cap'   => 'square',
 				'join'  => 'miter',
 				'dash'  => '0',
-				'color' => [ 233, 233, 233 ],
-			]
+				'color' => array( 233, 233, 233 ),
+			)
 		);
 
 		$this->writeHTMLCell(
