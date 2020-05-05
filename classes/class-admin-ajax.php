@@ -27,10 +27,12 @@ class Ajax {
 		check_admin_referer( 'ppn-generate', 'ppn-nonce' );
 		check_ajax_referer( 'ppn-generate', 'ppn-nonce' );
 
-		if ( is_array( $_POST['configure'] ) && ! empty( $_POST['configure']['number'] ) ) {
-			$post_query = new PostHandler( $_POST['configure'] );
-			$pdf        = new PdfHandler( $_POST['configure'], $post_query->get_post_data_for_pdf() );
-			$pdf->attach_header_image( ! empty( $_POST['configure']['image'] ) ? (int) $_POST['configure']['image'] : 0 );
+		$configure = apply_filters( 'ppn_pdf_configuration', $_POST['configure'] );
+
+		if ( is_array( $configure ) && ! empty( $configure['number'] ) ) {
+			$post_query = new PostHandler( $configure );
+			$pdf        = new PdfHandler( $configure, $post_query->get_post_data_for_pdf() );
+			$pdf->attach_header_image( ! empty( $configure['image'] ) ? (int) $configure['image'] : 0 );
 			$pdf->get_link( true );
 			exit;
 		}
@@ -47,10 +49,12 @@ class Ajax {
 		check_admin_referer( 'ppn-generate', 'ppn-nonce' );
 		check_ajax_referer( 'ppn-generate', 'ppn-nonce' );
 
-		if ( current_user_can( 'upload_files' ) && is_array( $_POST['configure'] ) && ! empty( $_POST['configure']['number'] ) ) {
-			$post_query = new PostHandler( $_POST['configure'] );
-			$pdf        = new PdfHandler( $_POST['configure'], $post_query->get_post_data_for_pdf() );
-			$pdf->attach_header_image( ! empty( $_POST['configure']['image'] ) ? (int) $_POST['configure']['image'] : 0 );
+		$configure = apply_filters( 'ppn_pdf_configuration', $_POST['configure'] );
+
+		if ( current_user_can( 'upload_files' ) && is_array( $configure ) && ! empty( $configure['number'] ) ) {
+			$post_query = new PostHandler( $configure );
+			$pdf        = new PdfHandler( $configure, $post_query->get_post_data_for_pdf() );
+			$pdf->attach_header_image( ! empty( $configure['image'] ) ? (int) $configure['image'] : 0 );
 			$filename    = $pdf->get_link();
 			$wp_filetype = wp_check_filetype( basename( $filename ) );
 
