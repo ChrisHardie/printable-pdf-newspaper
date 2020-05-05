@@ -1,3 +1,9 @@
+/**
+ * This CSS file is output as inline styles used by TCPDF in generating the final PDF file.
+ * These styles can be appended to in the admin Printable PDF configuration form, or
+ * by using the ppn_pdf_template_css_file_path() filter.
+ */
+
 .ppn-article-title {
 	font-family: 'Lora-Bold', serif;
 	font-size: 16pt;

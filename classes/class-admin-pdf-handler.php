@@ -181,9 +181,15 @@ class PdfHandler {
 
 		$css_to_include = $this->configure['custom_css'];
 
+		// Allow customization of the default CSS file to use.
+		$default_css_file = apply_filters(
+			'ppn_pdf_template_css_file_path',
+			plugin_dir_path( __DIR__ ) . 'assets/admin/css/pdf-template-styles.css'
+		);
+
 		ob_start();
 		echo '<style>';
-		include plugin_dir_path( __DIR__ ) . 'assets/admin/css/pdf-template-styles.css';
+		include $default_css_file;
 
 		if ( $css_to_include ) {
 			echo esc_html( $css_to_include );
