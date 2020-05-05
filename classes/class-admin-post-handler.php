@@ -66,11 +66,11 @@ class PostHandler {
 	 * @return array
 	 */
 	public function get_post_data_for_pdf() {
-		$posts  = [];
+		$posts  = array();
 		$config = $this->get_post_config();
 
 		foreach ( $this->posts_for_pdf as $post ) {
-			$data              = [];
+			$data              = array();
 			$data['title']     = $config->has_title ? $post->post_title : null;
 			$data['author']    = $config->has_author ? get_the_author_meta( 'display_name', $post->post_author ) : null;
 			$data['date']      = $config->has_date ? get_post_time( get_option( 'date_format' ), false, $post, true ) : null;
