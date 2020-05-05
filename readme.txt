@@ -4,7 +4,7 @@ Donate link: https://chrishardie.com/refer/donate
 Tags: print,pdf,newspaper,newsletter,journalism,news
 Stable tag: 1.1.0
 Requires at least: 5.2.2
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 5.6
 
 Generates a printable PDF newspaper from post content.
