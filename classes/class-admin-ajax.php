@@ -54,12 +54,12 @@ class Ajax {
 			$filename    = $pdf->get_link();
 			$wp_filetype = wp_check_filetype( basename( $filename ) );
 
-			$attachment = [
+			$attachment = array(
 				'post_mime_type' => $wp_filetype['type'],
 				'post_title'     => sanitize_file_name( basename( $filename ) ),
 				'post_content'   => '',
 				'post_status'    => 'inherit',
-			];
+			);
 
 			$attach_id   = wp_insert_attachment( $attachment, $filename );
 			$attach_data = wp_generate_attachment_metadata( $attach_id, $filename );

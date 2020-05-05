@@ -52,7 +52,7 @@
 				<label for="ppn-content-length">
 					<b><?php esc_attr_e( 'Truncate post content at', 'printable-pdf-newspaper' ); ?>:</b>
 				</label>
-				<input id="ppn-content-length" name="configure[length]" style="width: 55px" value="500" min="1" type="number">
+				<input id="ppn-content-length" name="configure[length]" style="width: 80px;" value="500" min="1" type="number">
 				<?php esc_attr_e( 'characters', 'printable-pdf-newspaper' ); ?>
 				(<?php esc_attr_e( 'blank for full content', 'printable-pdf-newspaper' ); ?>)
 			</div>
@@ -68,7 +68,6 @@
 				</label>
 				<input id="ppn-content-columns" name="configure[columns]" style="width: 55px" value="3" min="1" max="3" type="number">
 			</div>
-
 			<div class="ppn-item ppn-item-after-selection">
 				<label for="ppn-header-image">
 					<b><?php esc_attr_e( 'Select a masthead image', 'printable-pdf-newspaper' ); ?>:</b>
@@ -80,37 +79,37 @@
 				<input type="hidden" id="image_attachment_id" name="configure[image]">
 			</div>
 			<div class="ppn-item ppn-item-after-selection">
-				<b><?php esc_attr_e( 'Which items should be included', 'printable-pdf-newspaper' ); ?>?</b>:
-				<p>
-					<label>
+				<label for="ppn-custom-css">
+					<b><?php esc_attr_e( 'Custom CSS', 'printable-pdf-newspaper' ); ?>:</b>
+				</label>
+				<textarea id="ppn-custom-css" name="configure[custom_css]" rows="10" cols="55"></textarea>
+			</div>
+			<div class="ppn-item ppn-item-after-selection ppn-include-items">
+				<label for="ppn-items"><b><?php esc_attr_e( 'Which items should be included', 'printable-pdf-newspaper' ); ?>?</b></label>
+				<div class="ppn-item-list">
+				<ul>
+					<li>
 						<input checked name="configure[items][title]" type="checkbox">
 						<?php esc_attr_e( 'Title', 'printable-pdf-newspaper' ); ?>
-					</label>
-				</p>
-				<p>
-					<label>
+					</li>
+				<li>
 						<input checked name="configure[items][author]" type="checkbox">
 						<?php esc_attr_e( 'Author', 'printable-pdf-newspaper' ); ?>
-					</label>
-				</p>
-				<p>
-					<label>
+				</li>
+				<li>
 						<input checked name="configure[items][date]" type="checkbox">
 						<?php esc_attr_e( 'Date', 'printable-pdf-newspaper' ); ?>
-					</label>
-				</p>
-				<p>
-					<label>
+				</li>
+				<li>
 						<input checked name="configure[items][image]" type="checkbox">
 						<?php esc_attr_e( 'Featured image', 'printable-pdf-newspaper' ); ?>
-					</label>
-				</p>
-				<p>
-					<label>
+				</li>
+				<li>
 						<input checked name="configure[items][permalink]" type="checkbox">
 						<?php esc_attr_e( 'Permalink QR Code', 'printable-pdf-newspaper' ); ?>
-					</label>
-				</p>
+				</li>
+				</ul>
+				</div>
 			</div>
 
 

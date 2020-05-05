@@ -1,5 +1,6 @@
 === Printable PDF Newspaper ===
 Contributors: chrishardie
+Donate link: https://chrishardie.com/refer/donate
 Tags: print,pdf,newspaper,newsletter,journalism,news
 Stable tag: trunk
 Requires at least: 5.2.2
@@ -30,11 +31,35 @@ Printable PDF Newspaper is most easily installed via the Plugins tab in your adm
 
 == Frequently Asked Questions ==
 
+= How can I customize the PDF content styles? =
+
+You can customize the PDF newspaper layout and styles using limited CSS definitions, in two different ways:
+
+1. Enter your custom style definitions in the "Custom CSS" input field when generating the PDF.
+1. In your theme, filter the output of `ppn_pdf_template_css_file_path` to specify the full filesystem path to a file containing CSS styles.
+
+Here are the CSS classes you may wish to adjust:
+
+* *ppn-article-title*: Headlines / post titles
+* *ppn-article-wrapper*: Wrapper around the loop of all included articles
+* *ppn-author*: Author byline and display name (if included)
+* *ppn-date*: Article date (if included)
+* *ppn-content* and *ppn-excerpt*: article body content
+* *ppn-permalink-text*: the "Continue Reading" permalink introductory text
+* *ppn-permalink-qr-code-image*: image class for the QR Code (if included)
+* *ppn-article-bottom-border*: horizontal line dividing articles
+
+You can view the default style definitions in the plugin file `assets/admin/css/pdf-template-styles.css` or [in Trac](https://plugins.trac.wordpress.org/browser/printable-pdf-newspaper/trunk/assets/admin/css/pdf-template-styles.css).
+
+Note that TCPDF only supports a limited subset of the full CSS specification. Also note that any fonts referenced must be available in the TCPDF library used to generate the PDF. You can [view the TCPDF core font list](https://tcpdf.org/docs/fonts/).
+There's also an experimental filter, `ppn_font_file_paths`, that allows you to add to or change the array of TTF font file paths being loaded.
+
+Currently the header image size/position and subheading styles are not easily customizable, but will be in the future.
+
 = What features will be added in the future? =
 
 * Allow saving of PDF configuration for easy re-use in future runs
 * More customizable header size and layout
-* Better support for additional formatting and styles
 * Filters to alter how content is selected and laid out
 * Generate QR Codes within the plugin instead of Google Chart API
 * Ability to auto-generate the PDF on a schedule

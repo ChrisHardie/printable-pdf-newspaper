@@ -1,14 +1,35 @@
 .ppn-container {
-		margin-top: 10px;
+	margin-top: 10px;
 }
+
 .ppn-item {
-		margin-top: 10px;
+	display: inline-block;
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	vertical-align: top;
+}
+
+.ppn-item label {
+	width: 30%;
+	float: left;
+	text-align: right;
+	margin-right: 1em;
+}
+
+.ppn-item-list {
+	display: inline-block;
+	float: left;
+}
+
+.ppn-item-list ul {
+	margin-top: 0;
 }
 
 #ppn-post-type, #ppn-tag-id, #ppn-category-id {
-		width: 375px;
+	width: 375px;
 }
 
 .ppn-item-hidden {
-		display: none;
+	display: none;
 }

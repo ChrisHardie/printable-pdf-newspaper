@@ -47,10 +47,10 @@ class PdfHandler {
 			$url = get_attached_file( $image_id );
 			if ( in_array(
 				mime_content_type( $url ),
-				[
+				array(
 					'image/jpeg',
 					'image/png',
-				],
+				),
 				true
 			)
 			) {
@@ -109,10 +109,16 @@ class PdfHandler {
 		}
 
 		// Include some fonts to be used
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/robotoregular.ttf' );
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoBold.ttf' );
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoRegularItalic.ttf' );
-		TCPDF_FONTS::addTTFfont( plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/lorabold.ttf' );
+		$fonts_to_include = array(
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/robotoregular.ttf',
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoBold.ttf',
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/RobotoRegularItalic.ttf',
+			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/lorabold.ttf',
+		);
+
+		foreach ( apply_filters( 'ppn_font_file_paths', $fonts_to_include ) as $font_path ) {
+			TCPDF_FONTS::addTTFfont( $font_path );
+		}
 
 		// Adjust font settings for each.
 		// $family, $style, $size
@@ -124,7 +130,7 @@ class PdfHandler {
 
 		// Set up some footer properties
 		$pdf->setFooterMargin( 25 );
-		$pdf->setFooterFont( [ 'roboto', 'regular', 10 ] );
+		$pdf->setFooterFont( array( 'roboto', 'regular', 10 ) );
 
 		// Margins defined in units defined above
 		// 15 for top margin on pages 2+
@@ -179,7 +185,24 @@ class PdfHandler {
 	 */
 	private function render_template( $posts_to_include = null ) {
 
+		$css_to_include = $this->configure['custom_css'];
+
+		// Allow customization of the default CSS file to use.
+		$default_css_file = apply_filters(
+			'ppn_pdf_template_css_file_path',
+			plugin_dir_path( __DIR__ ) . 'assets/admin/css/pdf-template-styles.css'
+		);
+
 		ob_start();
+		echo '<style>';
+		include $default_css_file;
+
+		if ( $css_to_include ) {
+			echo esc_html( $css_to_include );
+		}
+
+		echo '</style>';
+
 		include plugin_dir_path( __DIR__ ) . 'views/admin/pdf/pdf-template.php';
 		$content = ob_get_contents();
 		ob_end_clean();
