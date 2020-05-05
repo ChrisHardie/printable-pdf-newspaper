@@ -175,6 +175,8 @@ class PostHandler {
 			);
 		}
 
+		$query_args = apply_filters( 'ppn_post_query_args', $query_args );
+
 		return new \WP_Query( $query_args );
 
 	}

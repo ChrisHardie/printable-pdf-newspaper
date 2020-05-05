@@ -58,11 +58,23 @@ There's also an experimental filter, `ppn_font_file_paths`, that allows you to a
 
 Currently the header image size/position and subheading styles are not easily customizable, but will be in the future.
 
+= What filters and hooks are available? =
+
+These filters are available to further customize the plugin functionality:
+
+* `ppn_post_query_args`: override the array of arguments to WP_Query to control which posts are included
+* `ppn_pdf_configuration`: override the array of PDF configuration values specified by the admin user
+* `ppn_pdf_template_css_file_path`: override the full filesystem path to a CSS file for PDF content styling
+* `ppn_font_file_paths`: override the array of filesystem paths to TTF font files to include in the PDF
+
+For example, to customize the number of posts included in the PDF, add something like this to your theme:
+
+`add_filter( 'ppn_pdf_configuration', function( $config ) { $config['number'] = 2; return $config; }, 10, 1 );`
+
 = What features will be added in the future? =
 
 * Allow saving of PDF configuration for easy re-use in future runs
 * More customizable header size and layout
-* Filters to alter how content is selected and laid out
 * Generate QR Codes within the plugin instead of Google Chart API
 * Ability to auto-generate the PDF on a schedule
 * Better controls for limiting number of pages generated and column breaks.
