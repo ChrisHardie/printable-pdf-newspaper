@@ -3,7 +3,7 @@
  * Plugin Name:       Printable PDF Newspaper
  * Plugin URI:        https://github.com/ChrisHardie/printable-pdf-newspaper
  * Description:       Generate a Printable PDF Newspaper from Posts
- * Version:           1.0.2
+ * Version:           1.1.0
  * Author:            Chris Hardie
  * Author URI:        https://chrishardie.com/
  * License:           GPL-2.0+

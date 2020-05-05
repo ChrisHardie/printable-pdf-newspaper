@@ -2,9 +2,9 @@
 Contributors: chrishardie
 Donate link: https://chrishardie.com/refer/donate
 Tags: print,pdf,newspaper,newsletter,journalism,news
-Stable tag: trunk
+Stable tag: 1.1.0
 Requires at least: 5.2.2
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 5.6
 
 Generates a printable PDF newspaper from post content.
@@ -90,6 +90,14 @@ Some people still encounter things and ideas through engagement with objects in 
 
 == Changelog ==
 
+= 1.1.0 =
+
+* Feature: users can specify custom CSS to control PDF appearance
+* Feature: add WordPress filters so developers can customize functionality
+* Maintenance: upgrade Select2 Javascript library
+* Maintenance: improve internationalization in Javascript UI elements
+* Maintenance: other minor improvements for code standards
+
 = 1.0.2 =
 
 * Maintenance: Tested against WordPress 5.4
@@ -103,3 +111,9 @@ Some people still encounter things and ideas through engagement with objects in 
 = 1.0.0 =
 
 * Initial release.
+
+== Upgrade Notice ==
+
+= 1.1.0 =
+
+Introduces CSS-based and filter-based PDF appearance customization along with better support for internationalization.
