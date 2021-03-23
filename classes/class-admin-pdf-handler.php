@@ -172,7 +172,7 @@ class PdfHandler {
 		} catch ( \Exception $e ) {
 			$error_message = '';
 			if ( false !== strpos( $e->getMessage(), 'Unable to get the size of the image' ) ) {
-				$error_message = 'Could not process a post featured image; try again without.';
+				$error_message = __( 'Could not process a post featured image; try again without.', 'printable-pdf-newspaper' );
 			}
 			wp_safe_redirect(
 				add_query_arg(

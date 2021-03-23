@@ -6,14 +6,15 @@
 		&& isset( $_GET['nonce'] )
 		&& wp_verify_nonce( $_GET['nonce'], 'ppn_error_nonce' ) ) {
 		?>
-		<div class="notice notice-error">
+		<div class="notice notice-error"><p>
 			<?php
 			esc_attr_e( 'There was a problem generating the PDF.', 'printable-pdf-newspaper' );
 			if ( ! empty( $_GET['ppn_error_message'] ) ) {
+				echo ' ';
 				echo esc_html( $_GET['ppn_error_message'] );
 			}
 			?>
-		</div>
+		</p></div>
 		<?php
 	}
 	?>
