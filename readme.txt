@@ -2,9 +2,9 @@
 Contributors: chrishardie
 Donate link: https://chrishardie.com/refer/donate
 Tags: print,pdf,newspaper,newsletter,journalism,news
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires at least: 5.2.2
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 5.6
 
 Generates a printable PDF newspaper from post content.
@@ -89,6 +89,11 @@ Some people still encounter things and ideas through engagement with objects in 
 2. Admin PDF configuration screen.
 
 == Changelog ==
+
+= 1.1.1 =
+
+* Tested against WordPress 5.7
+* Fix: display more useful error message when TCPDF cannot retrieve post images
 
 = 1.1.0 =
 
