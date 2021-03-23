@@ -159,14 +159,33 @@ class PdfHandler {
 			$align = 'J';
 		}
 
-		$pdf->writeHTML(
-			$this->render_template( $this->posts_to_include ),
-			true,
-			false,
-			true,
-			false,
-			$align
-		);
+		// Try to create the PDF using the template
+		try {
+			$pdf->writeHTML(
+				$this->render_template( $this->posts_to_include ),
+				true,
+				false,
+				true,
+				false,
+				$align
+			);
+		} catch ( \Exception $e ) {
+			$error_message = '';
+			if ( false !== strpos( $e->getMessage(), 'Unable to get the size of the image' ) ) {
+				$error_message = 'Could not process a post featured image; try again without.';
+			}
+			wp_safe_redirect(
+				add_query_arg(
+					array(
+						'ppn_is_error'      => true,
+						'ppn_error_message' => $error_message,
+						'nonce'             => wp_create_nonce( 'ppn_error_nonce' ),
+					),
+					admin_url( 'admin.php?page=printable-pdf-newspaper' )
+				)
+			);
+			exit;
+		}
 
 		// I - show in browser
 		// F - save

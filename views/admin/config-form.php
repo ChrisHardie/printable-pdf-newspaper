@@ -1,6 +1,23 @@
 <?php defined( 'WPINC' ) || die; ?>
 <div class="wrap">
 	<h1 class="wp-heading-inline"><?php esc_attr_e( 'Printable PDF Newspaper', 'printable-pdf-newspaper' ); ?></h1>
+	<?php
+	if ( ! empty( $_GET['ppn_is_error'] )
+		&& isset( $_GET['nonce'] )
+		&& wp_verify_nonce( $_GET['nonce'], 'ppn_error_nonce' ) ) {
+		?>
+		<div class="notice notice-error">
+			<?php
+			esc_attr_e( 'There was a problem generating the PDF.', 'printable-pdf-newspaper' );
+			if ( ! empty( $_GET['ppn_error_message'] ) ) {
+				echo esc_html( $_GET['ppn_error_message'] );
+			}
+			?>
+		</div>
+		<?php
+	}
+	?>
+
 	<div class="instructions">
 <?php esc_attr_e( 'Configure how you want your printable PDF newspaper to look, and what content it should include.', 'printable-pdf-newspaper' ); ?>
 	</div>
