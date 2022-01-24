@@ -28,7 +28,12 @@ defined( 'WPINC' ) || die;
 				<?php endif; ?>
 			</p>
 		<?php endif; ?>
-		<div class="<?php echo $item['has_excerpt'] ? 'excerpt ppn-excerpt' : 'content ppn-content'; ?>">
+		<div class="
+		<?php
+			echo $item['has_excerpt'] ? 'excerpt ppn-excerpt' : 'content ppn-content';
+			echo is_rtl() ? ' ppn-content-rtl' : ' ppn-content-ltr';
+		?>
+		">
 			<?php echo wp_kses_post( $item['content'] ); ?>
 			<?php if ( $item['permalink'] ) : ?>
 				<br /><span class="ppn-permalink-text"><?php esc_attr_e( 'Continue Reading', 'printable-pdf-newspaper' ); ?>:</span><br/>
