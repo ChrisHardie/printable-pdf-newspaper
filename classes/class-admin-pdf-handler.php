@@ -108,6 +108,11 @@ class PdfHandler {
 			$pdf->setHeaderImage( $this->header );
 		}
 
+		// If the system uses RTL text, do the same with the PDF
+		if ( is_rtl() ) {
+			$pdf->setRTL( true );
+		}
+
 		// Include some fonts to be used
 		$fonts_to_include = array(
 			plugin_dir_path( __DIR__ ) . 'assets/fonts/ttf/robotoregular.ttf',
