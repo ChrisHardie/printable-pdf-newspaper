@@ -6,7 +6,6 @@ by using the ppn_pdf_template_css_file_path() filter. See the plugin FAQ for mor
 .ppn-article-title {
 	font-family: 'Lora-Bold', serif;
 	font-size: 16pt;
-	text-align: left;
 }
 
 .ppn-article-wrapper p {
@@ -32,7 +31,15 @@ by using the ppn_pdf_template_css_file_path() filter. See the plugin FAQ for mor
 	color: rgb(102, 102, 102);
 	font-size: 10pt;
 	font-family: 'Roboto', sans-serif;
-	text-indent: 20px;
+}
+
+.ppn-content-ltr {
+    text-indent: 20px;
+}
+
+.ppn-content-rtl {
+    direction: rtl;
+    unicode-bidi: embed;
 }
 
 .ppn-permalink-text {
