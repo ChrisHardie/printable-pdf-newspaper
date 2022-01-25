@@ -2,7 +2,7 @@
 Contributors: chrishardie
 Donate link: https://chrishardie.com/refer/donate
 Tags: print,pdf,newspaper,newsletter,journalism,news
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 Requires at least: 5.2.2
 Tested up to: 5.9
 Requires PHP: 5.6
@@ -89,6 +89,11 @@ Some people still encounter things and ideas through engagement with objects in 
 2. Admin PDF configuration screen.
 
 == Changelog ==
+
+= 1.1.2 =
+
+* Enhancement: initial support for RTL text
+* Maintenance: Tested against WordPress 5.9
 
 = 1.1.1 =
 
