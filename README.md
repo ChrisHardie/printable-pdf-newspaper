@@ -2,7 +2,7 @@
 
 > Generates a printable PDF newspaper from post content.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/ChrisHardie/printable-pdf-newspaper.svg?label=release)](https://github.com/ChrisHardie/printable-pdf-newspaper/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/printable-pdf-newspaper) [![GPLv2 License](https://img.shields.io/github/license/ChrisHardie/printable-pdf-newspaper.svg)](https://github.com/ChrisHardie/printable-pdf-newspaper/blob/master/LICENSE) [![Follow @ChrisHardie](https://img.shields.io/twitter/follow/ChrisHardie?style=social)](https://twitter.com/ChrisHardie)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/tag/ChrisHardie/printable-pdf-newspaper.svg?label=release)](https://github.com/ChrisHardie/printable-pdf-newspaper/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/printable-pdf-newspaper) [![GPLv2 License](https://img.shields.io/github/license/ChrisHardie/printable-pdf-newspaper.svg)](https://github.com/ChrisHardie/printable-pdf-newspaper/blob/master/LICENSE) [![Follow @ChrisHardie](https://img.shields.io/mastodon/follow/000337759)](https://mastodon.social/@ChrisHardie)
 
 ## Description
 
